@@ -57,37 +57,37 @@ function addIncompatability(option1Name, option2Name, callback) {
 function bootstrap(c) {
     async.series([
         function (callback) {
-            createProduct({ name: "Car" }, callback);
+            createProduct({ id: 1, name: "Car" }, callback);
         },
 
         // Add Wheels
         function (callback) {
-            createOption({ name: "Standard Wheels" }, callback);
+            createOption({ id: 100, name: "Standard Wheels" }, callback);
         },
         function (callback) {
-            createOption({ name: "Sports Wheels" }, callback);
+            createOption({ id: 101, name: "Sports Wheels" }, callback);
         },
 
         // Add Interiors
         function (callback) {
-            createOption({ name: "Red Interior" }, callback);
+            createOption({ id: 200, name: "Red Interior" }, callback);
         },
         function (callback) {
-            createOption({ name: "Black Interior" }, callback);
+            createOption({ id: 201, name: "Black Interior" }, callback);
         },
         function (callback) {
-            createOption({ name: "White Interior" }, callback);
+            createOption({ id: 202, name: "White Interior" }, callback);
         },
 
         // Add Exteriors
         function (callback) {
-            createOption({ name: "Red Exterior" }, callback);
+            createOption({ id: 300, name: "Red Exterior" }, callback);
         },
         function (callback) {
-            createOption({ name: "Black Exterior" }, callback);
+            createOption({ id: 301, name: "Black Exterior" }, callback);
         },
         function (callback) {
-            createOption({ name: "White Exterior" }, callback);
+            createOption({ id: 302, name: "White Exterior" }, callback);
         },
 
         // Make options available for product
