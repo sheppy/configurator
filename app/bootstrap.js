@@ -26,7 +26,7 @@ function createOption(data, callback) {
 function addOptionToProduct(productName, optionName, callback) {
     var query = [
         "MATCH (product:Product {product}), (option:Option {option})",
-        "CREATE UNIQUE (option)-[r:AVAILABLE]-(product)",
+        "CREATE UNIQUE (option)-[r:AVAILABLE]->(product)",
         "RETURN r;"
     ].join("\n");
 
@@ -40,8 +40,9 @@ function addOptionToProduct(productName, optionName, callback) {
 function addIncompatability(option1Name, option2Name, callback) {
     var query = [
         "MATCH (option1:Option {option1}), (option2:Option {option2})",
-        "CREATE UNIQUE (option1)-[r:INCOMPATIBLE]-(option2)",
-        "RETURN r;"
+        "CREATE UNIQUE (option1)-[r1:INCOMPATIBLE]->(option2)",
+        "CREATE UNIQUE (option2)-[r2:INCOMPATIBLE]->(option1)",
+        "RETURN r1, r2;"
     ].join("\n");
 
     var params = {
