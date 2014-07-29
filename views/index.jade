@@ -1,0 +1,27 @@
+h1 Product
+
+p: strong Product Name:
+p= product.name
+
+p: strong Options:
+ul
+    for option in product.options
+        li= option.name
+    else
+        li None
+
+
+h2 Available Options
+ul
+    for option in availableOptions
+        li= option.name
+    else
+        li None
+
+
+h2 Unavailable Options
+ul
+    for option in unavailableOptions
+        li= option.name
+    else
+        li None
