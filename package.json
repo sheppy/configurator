@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/configurator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,13 +12,15 @@
     "url": "git://github.com/sheppy/configurator.git"
   },
   "author": "Chris Sheppard",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sheppy/configurator/issues"
   },
   "homepage": "https://github.com/sheppy/configurator",
   "dependencies": {
     "express": "~4.7.2",
-    "jade": "~1.5.0"
+    "jade": "~1.5.0",
+    "neo4j": "~1.1.0",
+    "async": "~0.9.0"
   }
 }

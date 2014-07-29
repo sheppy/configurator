@@ -2,11 +2,13 @@ h1 Product
 
 p: strong Product Name:
 p= product.name
+p= code
 
 p: strong Options:
 ul
     for option in product.options
         li= option.name
+            a(href="/product/"+code+"/remove/" + option.id) [Remove]
     else
         li None
 
@@ -15,6 +17,7 @@ h2 Available Options
 ul
     for option in availableOptions
         li= option.name
+            a(href="/product/"+code+"/add/" + option.id) [Add]
     else
         li None
 
